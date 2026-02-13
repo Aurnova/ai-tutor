@@ -1,0 +1,41 @@
+{
+  "name": "tutor-ai-panel",
+  "displayName": "Tutor AI",
+  "description": "Right-side Tutor AI chat using OpenRouter (Qwen3 Coder Next) for Socratic teaching.",
+  "version": "0.1.0",
+  "publisher": "aurnova",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onView:tutorAI.chat"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "auxiliary": [
+        {
+          "id": "tutorAI",
+          "title": "Tutor AI",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "tutorAI": [
+        {
+          "id": "tutorAI.chat",
+          "name": "Chat"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}
